@@ -20,6 +20,10 @@ var routes = [
     }
   },
   {
+    path: '/notifications/',
+    componentUrl: './views/notifications/',
+  },
+  {
     path: '/login/',
     componentUrl: './views/auth/login.html',
   },
