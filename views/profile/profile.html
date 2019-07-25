@@ -3,19 +3,19 @@
     <div class="navbar">
         <div class="navbar-inner bay">
             <div class="left">
-                <a href="#" class="back link"> <i class="fa fa-angle-left"></i><span>Back</span></a>
+                <a href="#" class="back link" style="color:#000;"> <i class="fa fa-angle-left"></i><span>Back</span></a>
             </div>
-            <div class="title">Profile</div>
+            <div class="title" style="color:#000;">Profile</div>
             <div class="right">
-                <a href="#" class="link icon-only popup-open" data-popup=".edit-popup">
+                <!-- <a href="#" class="link icon-only popup-open" data-popup=".edit-popup">
                     <i class="f7-icons">compose</i>
-                </a>
+                </a> -->
             </div>
         </div>
     </div>
     <div class="page-content">
-        <div class="profile-header">
-            <div class="pro-img-box">
+        <div class="profile-header" style="margin-top:-12px;">
+            <!-- <div class="pro-img-box">
                 <img alt="" src="user-logo.jpg">
                 <div class="pro-img-upload">
                     <input type="file" class="upload">
@@ -23,14 +23,22 @@
             </div>
             <div class="pro-user-det">
                 <div class="profile-name">John Doe</div>
-                <!-- <div class="list no-hairlines-md">  </div> -->
+            </div> -->
+            <div class="row">
+              <div class="col-40">
+                <img alt="" src="user-logo.jpg">
+              </div>
+              <div class="col-60">
+                <h4 class="text-center">Nama Pengguna</h4>
+                <p>Pelaksana Seksi Data Dan Administrasi Kepegawaian</p>
+              </div>
             </div>
         </div>
         <div class="toolbar tabbar toolbar-border">
             <div class="toolbar-inner">
                 <a href="#pro_overview" class="tab-link tab-link-active">Overview</a>
-                <a href="#pro_education" class="tab-link">Education</a>
-                <a href="#pro_experience" class="tab-link">Experience</a>
+                <a href="#pro_education" class="tab-link">Pendidikan</a>
+                <a href="#pro_experience" class="tab-link">Riwayat Karir</a>
             </div>
         </div>
         <!-- Tabs -->
@@ -83,20 +91,6 @@
                     <div class="block block-strong address-block">
                         <p><strong>Address</strong></p>
                         <p>1861 Bayonne Ave, Manchester Township, NJ, 08759</p>
-                    </div>
-					          <div class="block skills-block">
-                        <p><strong>Skills</strong></p>
-                        <div class="skills">
-                            <span>IOS</span>
-                            <span>Android</span>
-                            <span>Html</span>
-                            <span>CSS</span>
-                            <span>Codignitor</span>
-                            <span>Php</span>
-                            <span>Javascript</span>
-                            <span>Wordpress</span>
-                            <span>Jquery</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -497,7 +491,7 @@
 				app.preloader.hide();
 			},
 			pageInit: function(event, page) {
-        
+
         $("#home").removeClass('tab-link-active');
         $("#profile").addClass('tab-link-active');
 			},
