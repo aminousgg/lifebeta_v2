@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from dreamguys.co.in/dhr/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Aug 2018 01:13:12 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+    <title>Lifeatbankjateng</title>
+    <link rel="stylesheet" href="assets/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="statusbar"></div>
+
+        <div class="panel panel-left panel-reveal">
+            <div class="block">
+                <div class="block-title">
+                  <img class="circle-img pos-center" src="user-logo.jpg" alt="">
+                </div>
+                <div class="block text-align-center">
+                    <a id="nama">Nama Peserta</a>
+                </div>
+                <hr style="color: #fff">
+                <div class="side-menu" id="sidebar-menu">
+                  <ul>
+                    <li>
+                      <a class="panel-close text-align-left" href="/biodata/">
+        								<b><i class="fa fa-cog" aria-hidden="true"></i> Ganti Password</b>
+        							</a>
+                    </li>
+                    <li>
+                      <a class="panel-close text-align-left" href="/user-guide/">
+                        <b><i class="fa fa-lock" aria-hidden="true"></i> Logout</b>
+        							</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="view view-main view-init" data-url="/">
+            <div class="page no-swipeback" data-name="index">
+                <div class="navbar two-action no-hairline bay">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" style="color:#000;" class="link icon-only panel-open" data-panel="left">
+                              <!-- <i class="material-icons">perm_identity</i> -->
+                              <i class="material-icons">menu</i>
+                              <!-- <img style="" src="assets/img/life.png" alt=""> -->
+                            </a>
+                        </div>
+                        <div class="right" style="margin-right: 7px;">
+                          <a style="color:#000;" class="link icon-only isi-notif"><i class="icon material-icons notif">notifications</i></a>
+                          <!-- <a href="#" style="color:#000;" data-popover=".main-menu" class="link icon-only popover-open"><i class="material-icons">more_vert</i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="popover main-menu">
+                    <div class="popover-angle"></div>
+                    <div class="popover-inner">
+                        <div class="list">
+                            <ul>
+                                <li><a href="/profile/" class="list-button item-link popover-close">My Profile</a></li>
+                                <li><a href="/settings/" class="list-button item-link popover-close">Settings</a></li>
+                                <li><a href="/login/" class="list-button item-link popover-close">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="page-content">
+                    <div class="block">
+                        <div style="margin-bottom:35px;" class="dashboard-area">
+                          <div class="row" style="margin-top:-7px;">
+                              <div class="col-100">
+                                <div style="padding-left:1px;padding-bottom:2px;color:black;float:left;font-weight: bold;font-size:3.7vw;" class="greeting">
+                                  Hai
+                                </div>
+                              </div>
+                          </div>
+                          <!-- slide -->
+                          <div class="row">
+                            <div class="col-100 tablet-100">
+                              <div class="swiper-container swiper-init demo-swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide"> <img style="height:100%; width:100%;" src="assets/img/banner.png" alt=""> </div>
+                                  <!-- <div class="swiper-slide">Slide 2</div>
+                                  <div class="swiper-slide">Slide 3</div>
+                                  <div class="swiper-slide">Slide 4</div>
+                                  <div class="swiper-slide">Slide 5</div>
+                                  <div class="swiper-slide">Slide 6</div>
+                                  <div class="swiper-slide">Slide 7</div>
+                                  <div class="swiper-slide">Slide 8</div>
+                                  <div class="swiper-slide">Slide 9</div>
+                                  <div class="swiper-slide">Slide 10</div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--/ slide -->
+                          <!-- icon BARIS -->
+                          <div class="row">
+                            <div class="col-25 tablet-25">
+                                <a href="/sales/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/sales.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>SALES</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                            <div class="col-25 tablet-25">
+                                <a href="/eoffice/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/eoffice.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>E-OFFICE</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                            <div class="col-25 tablet-25">
+                                <a href="/kinerja/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/kinerja.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>KINERJA</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                            <div class="col-25 tablet-25">
+                                <a href="/faskes/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/faskes.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>FASKES</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                          </div>
+                          <!-- icon -->
+                          <!-- icon BARIS 2 -->
+                          <div class="row margin-top">
+                            <div class="col-25 tablet-25">
+                                <a href="/koperasi/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/koperasi.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>KOPERASI</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                            <div class="col-25 tablet-25">
+                                <a href="/cuti/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/cuti.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>CUTI</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                            <div class="col-25 tablet-25">
+                                <a href="/ijin/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/absen2.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>IJIN ABSEN</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                            <div class="col-25 tablet-25">
+                                <a href="#" data-sheet=".my-sheet" class="sheet-open">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/lain.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>MORE</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
+                          </div>
+                          <!-- icon BARIS 2 -->
+                          <!-- card berita -->
+                          <div class="row margin-top">
+                            <div class="col-100">
+                              <div class="card demo-card-header-pic">
+                                <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg)" class="card-header align-items-flex-end">
+                                  <b>
+                                    Journey To Mountains
+                                  </b>
+                                </div>
+                                <div class="card-content card-content-padding">
+                                  isi deskripsi pendek
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-100">
+                              <div class="card demo-card-header-pic">
+                                <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg)" class="card-header align-items-flex-end">
+                                  <b>
+                                    Journey To Mountains
+                                  </b>
+                                </div>
+                                <div class="card-content card-content-padding">
+                                  isi deskripsi pendek
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /card -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal sheet menu more -->
+            <div class="sheet-modal my-sheet">
+              <div class="toolbar">
+                <div style="padding-left:10px; padding-right:10px;" class="toolbar-inner">
+                  <div class="left"><h4>More Menu</h4></div>
+                  <div class="right">
+                    <a class="link sheet-close text-danger" href="#">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div style="background-color:#fff;" class="sheet-modal-inner">
+                <div style="margin-top:7px; margin-bottom:12px;" class="block">
+                  <div class="row">
+                    <div class="col-25 tablet-25">
+                        <a href="/menu-absen/">
+                          <div class="item-widget">
+                            <div class="item-widget-icon"><img src="assets/img/elearning2.png" alt=""></div>
+                            <div class="item-widget-info">
+                              <p>E-LEARNING</p>
+                            </div>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="col-25 tablet-25">
+                        <a href="/sales/">
+                          <div class="item-widget">
+                            <div class="item-widget-icon"><img src="assets/img/dplk.png" alt=""></div>
+                            <div class="item-widget-info">
+                              <p>DPLK</p>
+                            </div>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="col-25 tablet-25">
+                        <a href="/eoffice/">
+                          <div class="item-widget">
+                            <div class="item-widget-icon"><img src="assets/img/kredit_kmg_plo.png" alt=""></div>
+                            <div class="item-widget-info">
+                              <p>KREDIT</p>
+                            </div>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="col-25 tablet-25">
+                      <a href="/kinerja/">
+                        <div class="item-widget">
+                          <div class="item-widget-icon"><img src="assets/img/gaji.png" alt=""></div>
+                          <div class="item-widget-info">
+                            <p>GAJI</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-25 tablet-25">
+                      <a href="/kinerja/">
+                        <div class="item-widget">
+                          <div class="item-widget-icon"><img src="assets/img/sppd.png" alt=""></div>
+                          <div class="item-widget-info">
+                            <p>SPPD</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-25 tablet-25">
+                      <a href="/kinerja/">
+                        <div class="item-widget">
+                          <div class="item-widget-icon"><img src="assets/img/mydoc.png" alt=""></div>
+                          <div class="item-widget-info">
+                            <p>MY DOC</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-25 tablet-25">
+                      <a href="/kinerja/">
+                        <div class="item-widget">
+                          <div class="item-widget-icon"><img src="assets/img/dapen.png" alt=""></div>
+                          <div class="item-widget-info">
+                            <p>DANPEN</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-25 tablet-25">
+                      <a href="/kinerja/">
+                        <div class="item-widget">
+                          <div class="item-widget-icon"><img src="assets/img/presensi.png" alt=""></div>
+                          <div class="item-widget-info">
+                            <p>KEHADIRAN</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="toolbar tabbar tabbar-labels toolbar-bottom bay-top">
+              <div class="toolbar-inner">
+                <a href="/" id="home" class="tab-link tab-link-active">
+                  <!-- Different icons for iOS and MD themes -->
+                  <i class="icon f7-icons if-not-md">home_fill</i>
+                  <i class="icon material-icons md-only">home</i>
+                  <!-- Label text -->
+                  <span class="tabbar-label">Home</span>
+                </a>
+                <a href="#tab-2" class="tab-link">
+                  <i class="icon f7-icons if-not-md">today_fill</i>
+                  <i class="icon material-icons md-only">today</i>
+                  <span class="tabbar-label">Agenda</span>
+                </a>
+                <a href="#tab-2" class="tab-link">
+                  <i class="icon f7-icons if-not-md">help_fill</i>
+                  <i class="icon material-icons md-only">help</i>
+                  <span class="tabbar-label">Bantuan</span>
+                </a>
+                <a href="#tab-2" class="tab-link">
+                  <i class="icon f7-icons if-not-md">email_fill</i>
+                  <i class="icon material-icons md-only">email</i>
+                  <span class="tabbar-label">Email</span>
+                </a>
+                <a href="/profile/" id="profile" class="tab-link">
+                  <i class="icon f7-icons if-not-md">person_round_fill</i>
+                  <i class="icon material-icons md-only">person_round</i>
+                  <span class="tabbar-label">Profile</span>
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/framework7.min.js"></script>
+    <script type="text/javascript" src="assets/js/Chart.bundle.js"></script>
+    <script type="text/javascript" src="assets/js/routes.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>

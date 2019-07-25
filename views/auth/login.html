@@ -1,0 +1,89 @@
+<template>
+<div class="page no-navbar no-toolbar no-swipeback login-page" data-name="login">
+	<div class="page-content">
+		<div class="account-page">
+			<div class="account-inner">
+				<div class="account-center">
+					<div class="account-content">
+						<div class="account-logo">
+							<img alt="" src="assets/img/logo2.html">
+						</div>
+						<div class="account-title">
+							<h3>Login</h3>
+						</div>
+						<div class="account-form">
+							<form data-type="inner">
+								<div class="input-list" style="margin-bottom: -2px;">
+									<input type="text" style="border-radius: 0px; height: 55px;" name="email" id="email" placeholder="Email pegawai">
+								</div>
+								<div class="input-list">
+									<input type="password" style="border-radius: 0px; height: 55px;" name="password" id="password" placeholder="Password">
+								</div>
+								<div class="input-list">
+									<div class="row">
+									    <button class="button color-blue button-fill button-big col" @click="login" style="border-radius: 0px; height: 55px; margin-bottom: 6px;" type="button">Masuk</button>
+								  	</div>
+									<div class="ket"></div>
+								</div>
+							</form>
+							<hr>
+							<!-- <p class="text-align-center m-b-0">Belum pernah mendaftar? <a href="/page/?module=user/register">Daftar Sekarang</a></p> -->
+							<br>
+								<div class="row">
+									<a class="button button-fill button-big col color-orange" style="border-radius: 0px; height: 55px; line-height: 54px; font-size:15px;">Pendaftaran</a>
+									<a class="button button-fill button-big col color-red" style="border-radius: 0px; height: 55px; line-height: 54px; font-size:12px;">Lupa Password</a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+<script>
+  var apps;
+  return {
+    on: {
+		      pageInit: function(event, page) {
+		      },
+		      pageBeforeIn: function(event, page) {
+		      },
+		      pageAfterIn: function(e, page) {
+		        apps=page.app;
+		        apps.preloader.hide();
+		      },
+		      pageBeforeRemove() {
+
+		      },
+		    },
+	  methods: {
+			login : function(){
+				app.preloader.show();
+				app.request({
+					url: api_url+'auth/login',
+					method: 'POST',
+					dataType: 'json',
+					data: {
+							email:encrypt($('#email').val()),
+							password:encrypt($('#password').val())
+					},
+					success: function (data) {
+						app.preloader.hide();
+						if(data.status.code == 200){
+							pesan(data.status.message,'center')
+							settoken(data.response);
+							redirect("/");
+						}else{
+							pesan(data.status.message);
+						}
+					},
+					error: function(data){
+						app.preloader.hide();
+						pesan(data.status.message);
+					}
+				});
+			}
+	 }
+}
+</script>

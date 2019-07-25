@@ -1,0 +1,63 @@
+<template>
+<div class="page" data-name="sales">
+	<div class="navbar bay">
+		<div class="navbar-inner">
+			<div class="left">
+				<a href="#" style="color:#000;" class="link back">
+					<i class="fa fa-angle-left"></i> <span class="ios-only">Back</span>
+				</a>
+			</div>
+			<div style="color:#000;" class="title">Kinerja</div>
+			<div class="right">
+				<a href="/add-client/" style="color:#000;" class="link icon-only">
+					<!-- <i class="f7-icons">add</i> -->
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-content">
+		<div class="block">
+			<div style="padding-left:8px; padding-right:8px;" class="row">
+				<div class="col-33 tablet-33">
+					<a href="/clients/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/kinerja/kinerja_indv.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+				<div class="col-33 tablet-33">
+					<a href="/clients/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/kinerja/kinerja_unit.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+				<div class="col-33 tablet-33">
+
+        </div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

@@ -1,0 +1,56 @@
+<template>
+<div class="page" data-name="sales">
+	<div class="navbar bay">
+		<div class="navbar-inner">
+			<div class="left">
+				<a href="#" style="color:#000;" class="link back">
+					<i class="fa fa-angle-left"></i> <span class="ios-only">Back</span>
+				</a>
+			</div>
+			<div style="color:#000;" class="title">Kinerja</div>
+			<div class="right">
+				<a href="/add-client/" style="color:#000;" class="link icon-only">
+					<!-- <i class="f7-icons">add</i> -->
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-content">
+		<div class="block">
+      <div style="padding-left:8px; padding-right:8px;" class="earing-box">
+        <h4 class="text-info">Saldo Terakhir</h4>
+        <table class="table-bordered">
+          <tbody>
+            <tr>
+              <td><strong>Simpanan Sukarela</strong> <span class="pull-right">Rp. 0,00</span></td>
+            </tr>
+            <tr>
+              <td><strong>Simpanan Wajib</strong> <span class="pull-right">Rp. 0,00</span></td>
+            </tr>
+            <tr>
+              <td><strong>Total Simpanan</strong> <span class="pull-right">Rp. 0,00</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+		</div>
+	</div>
+</div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

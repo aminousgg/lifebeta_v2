@@ -1,0 +1,110 @@
+<template>
+<div class="page" data-name="ijin">
+	<div class="navbar bay">
+		<div class="navbar-inner">
+			<div class="left">
+				<a href="#" style="color:#000;" class="link back">
+					<i class="fa fa-angle-left"></i> <span class="ios-only">Back</span>
+				</a>
+			</div>
+			<div style="color:#000;" class="title">Ijin Absen</div>
+			<div class="right">
+				<a href="/add-client/" style="color:#000;" class="link icon-only">
+					<!-- <i class="f7-icons">add</i> -->
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-content">
+		<div class="block">
+			<!--  -->
+      <div style="padding-left:8px; padding-right:8px;" class="row">
+				<div class="col-33 tablet-33">
+					<a href="/kosong/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/ijin/fo-sakit.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+        <div class="col-33 tablet-33">
+					<a href="/kosong/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/ijin/fa-cuti.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+        <div class="col-33 tablet-33">
+					<a href="/kosong/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/ijin/ijin.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+        <div class="col-33 tablet-33">
+					<a href="/kosong/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/ijin/fa-forgot.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+        <div class="col-33 tablet-33">
+					<a href="/kosong/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/ijin/time.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+        <div class="col-33 tablet-33">
+					<a href="/kosong/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/ijin/fa-dinas.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+        <div class="col-33 tablet-33">
+					<a href="/kosong/">
+						<div class="dash-widget box-bay">
+							<div class="dash-widget-icon">
+                <img src="assets/icon/ijin/fa-paperplane.png" alt="">
+              </div>
+						</div>
+					</a>
+        </div>
+        <div class="col-33 tablet-33">
+
+        </div>
+        <div class="col-33 tablet-33">  </div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>
