@@ -1,0 +1,92 @@
+<template>
+  <div class="page" data-name="bantuan">
+  	<div class="navbar bay">
+  		<div class="navbar-inner bay">
+        <div class="left">
+        </div>
+        <div class="title" style="color:#000;">Bantuan</div>
+        <div class="right">
+        </div>
+  		</div>
+  	</div>
+
+  	<div class="page-content">
+  		<div class="block">
+  			<div class="row dept-row">
+          <!-- SEARCH -->
+          <div class="col-100 tablet-50">
+            <div class="list no-hairlines-md margin-bottom" style="margin: 0;">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-media">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Cara Pengajuan Cuti">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- SEARCH -->
+
+          <!-- DAFTAR BANTUAN -->
+  				<div class="col-100 tablet-50">
+  					<div class="widget dept-widget">
+  						<h4 class="user-name text-ellipsis">Cara Pengajuan Cuti</h4>
+  						<div class="user-role">Cras quis tempor ante. Integer interdum ex in velit bibendum, et luctus magna luctus. Sed mattis dictum ex ac varius. Sed rhoncus nisi ut turpis scelerisque tincidunt. Aenean vitae euismod tellus, id faucibus mi.</div>
+  					</div>
+  				</div>
+  				<div class="col-100 tablet-50">
+  					<div class="widget dept-widget">
+  						<h4 class="user-name text-ellipsis">Panduan Persetujuan Cuti</h4>
+  						<div class="user-role">Cras quis tempor ante. Integer interdum ex in velit bibendum, et luctus magna luctus. Sed mattis dictum ex ac varius. Sed rhoncus nisi ut turpis scelerisque tincidunt. Aenean vitae euismod tellus, id faucibus mi.</div>
+  					</div>
+  				</div>
+  				<div class="col-100 tablet-50">
+  					<div class="widget dept-widget">
+  						<h4 class="user-name text-ellipsis">Hak Cuti untuk Pegawai</h4>
+  						<div class="user-role">Cras quis tempor ante. Integer interdum ex in velit bibendum, et luctus magna luctus. Sed mattis dictum ex ac varius. Sed rhoncus nisi ut turpis scelerisque tincidunt. Aenean vitae euismod tellus, id faucibus mi.</div>
+  					</div>
+  				</div>
+  				<div class="col-100 tablet-50">
+  					<div class="widget dept-widget">
+  						<h4 class="user-name text-ellipsis">Cara Minta Tambah Gaji</h4>
+  						<div class="user-role">Cras quis tempor ante. Integer interdum ex in velit bibendum, et luctus magna luctus. Sed mattis dictum ex ac varius. Sed rhoncus nisi ut turpis scelerisque tincidunt. Aenean vitae euismod tellus, id faucibus mi.</div>
+  					</div>
+  				</div>
+  				<div class="col-100 tablet-50">
+  					<div class="widget dept-widget">
+  						<h4 class="user-name text-ellipsis">Pengajuan Cuti Bagi Pegawai</h4>
+  						<div class="user-role">Cras quis tempor ante. Integer interdum ex in velit bibendum, et luctus magna luctus. Sed mattis dictum ex ac varius. Sed rhoncus nisi ut turpis scelerisque tincidunt. Aenean vitae euismod tellus, id faucibus mi.</div>
+  					</div>
+  				</div>
+          <!-- DAFTAR BANTUAN -->
+  			</div>
+  		</div>
+  	</div>
+  </div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+        $("#bantuan").addClass('tab-link-active');
+        $("#home").removeClass('tab-link-active');
+        $("#profile").removeClass('tab-link-active');
+        $("#agenda").removeClass('tab-link-active');
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

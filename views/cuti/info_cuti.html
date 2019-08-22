@@ -1,0 +1,106 @@
+<template>
+<div class="page" data-name="sales">
+	<div class="navbar bay">
+		<div class="navbar-inner">
+			<div class="left">
+				<a href="#" style="color:#000;" class="link back">
+					<i class="fa fa-angle-left"></i> <span class="ios-only">Back</span>
+				</a>
+			</div>
+			<div style="color:#000;" class="title">Info Cuti</div>
+			<div class="right">
+				<a href="/add-client/" style="color:#000;" class="link icon-only">
+					<!-- <i class="f7-icons">add</i> -->
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-content">
+    <div class="list no-hairlines custom-form">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-media">
+            <i class="icon demo-list-icon"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title item-label"></div>
+            <div class="item-input-wrap input-dropdown-wrap">
+              <select id="list-cuti">
+
+              </select>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+		<div class="block" style="background-color: #fff; ">
+      <div style="padding-left:8px; padding-right:8px; padding-top:5px; padding-bottom: 5px;" class="earing-box">
+        <h5 class="text-info" style="margin-bottom: 0;">Cuti Tahunan</h5>
+        <table class="table-bordered">
+          <thead>
+            <tr>
+              <th colspan="2" id="thn">Tahun 2019</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hak Cuti Tahunan</td>
+              <td id="hak_cuti_tahun">12 hari</td>
+            </tr>
+            <tr>
+              <td>Cuti telah Digunakan</td>
+              <td id="cuti_digunakan">7 hari</td>
+            </tr>
+            <tr>
+              <td>Sisa Cuti Tahunan</td>
+              <td id="sisa_cuti">5 hari</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+		</div>
+	</div>
+</div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+        list_tahun_cuti(page.app, function(data){
+          var isi = '';
+          for(var i in data){
+            isi += '<option value="'+data[i]+'">Cuti Tahun '+data[i]+'</option>';
+          }
+          $("#list-cuti").html(isi);
+        });
+        detail_cuti_tahun(page.app, $("#list-cuti").val(), function(data){
+          $("#thn").html( "Tahun "+$("#list-cuti").val() );
+          $("#hak_cuti_tahun").html(data.hak_cuti_tahunan);
+          $("#cuti_digunakan").html(data.cuti_yang_telah_digunakan);
+          $("#sisa_cuti").html(data.sisa_cuti_tahunan);
+        });
+        $("#list-cuti").on('change', function(){
+            app.preloader.show();
+            detail_cuti_tahun(page.app, $("#list-cuti").val(), function(data){
+              // console.log(data);
+              $("#thn").html( "Tahun "+$("#list-cuti").val() );
+              $("#hak_cuti_tahun").html(data.hak_cuti_tahunan);
+              $("#cuti_digunakan").html(data.cuti_yang_telah_digunakan);
+              $("#sisa_cuti").html(data.sisa_cuti_tahunan);
+            });
+            app.preloader.hide();
+        });
+
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

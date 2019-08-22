@@ -1,0 +1,82 @@
+<template>
+  <div class="page" data-name="departments">
+  	<div class="navbar">
+  		<div class="navbar-inner">
+  			<div class="left">
+  				<a href="/" class="link back">
+  					<i class="fa fa-angle-left" style="color: #000;"></i> <span class="ios-only" style="color: #000;">Back</span>
+  				</a>
+  			</div>
+        <div class="title" style="color:#000;">Gaji</div>
+        <div class="right">
+        </div>
+  		</div>
+  	</div>
+
+  	<div class="page-content">
+  		<div class="block">
+  			<div class="row dept-row">
+          <!-- TOP -->
+          <div class="col-100 tablet-50" id="now">
+
+  				</div>
+          <!-- TOP -->
+        </div>
+
+        <div class="row dept-row margin-top" id="latest">
+          <!-- TAHUN -->
+          <!-- TAHUN -->
+        </div>
+
+			</div>
+  	</div>
+  </div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+        get_payroll(page.app, function(data){
+            var bulan = new Date(data.response.now[0].bulan);
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+              "July", "August", "September", "October", "November", "December"
+            ];
+            var now = "";
+            now +=  '<a href="/gaji/'+data.response.now[0].no_slip+'">'+
+                          '<div class="widget dept-widget">'+
+                            '<h4 class="user-name text-ellipsis text-center">Take Home Pay Bulan '+monthNames[bulan.getMonth()]+' '+data.response.now[0].tahun+'</h4>'+
+                            '<h2 class="title text-center padding" style="margin: 0; color: red;font-size: 2em;">'+rupiah(data.response.now[0].net_salary)+',-</h2>'+
+                            '<p class="text-center" style="color: #000;">Lihat Rincian</p>'+
+                          '</div>'+
+                        '</a>';
+            $("#now").html(now);
+
+            var payroll = "";
+            var i;
+            for(i=1; i<data.response.latest.length; i++){
+                var month = new Date(data.response.latest[i].bulan);
+                payroll +=    '<div class="col-100 tablet-50">'+
+                                '<a href="/gaji/'+data.response.latest[i].no_slip+'">'+
+                                '<div class="widget dept-widget">'+
+                                  '<div class="profile-action">'+
+                                    '<span class="action-icon"><i class="fa fa-caret-right"></i></span>'+
+                                  '</div>'+
+                                  '<h4 class="user-name text-ellipsis">'+monthNames[month.getMonth()]+' '+data.response.latest[i].tahun+'</h4>'+
+                                '</div>'+
+                                '</a>'+
+                              '</div>';
+            }
+            $("#latest").html(payroll);
+        });
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

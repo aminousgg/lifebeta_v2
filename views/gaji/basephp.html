@@ -1,0 +1,101 @@
+<div class="earning-box">
+    <h4 class="m-b-10">Pendapatan</h4>
+    <table class="table-bordered">
+      <tbody>
+        <tr>
+          <td><strong>Gaji Pokok</strong> <span class="pull-right">Rp. <?=number_format($data->gaji)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tunjangan Fungsional</strong> <span class="pull-right">Rp. <?=number_format($data->tj_fungsional)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tunjangan Jabatan</strong> <span class="pull-right">Rp. <?=number_format($data->tj_jabatan)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tunjangan Khusus</strong> <span class="pull-right">Rp. <?=number_format($data->tj_khusus)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tunjangan Kinerja</strong> <span class="pull-right">Rp. <?=number_format($data->tj_kinerja)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tunjangan Pajak</strong> <span class="pull-right">Rp. <?=number_format($data->tj_pajak)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Total Pendapatan</strong> <span class="pull-right"><strong>Rp. <?=number_format($data->income)?>,-</strong></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="deduction-box">
+    <h4 class="m-b-10">Potongan</h4>
+    <table class="table-bordered">
+      <tbody>
+        <tr>
+          <td><strong>Iuran Pensiun</strong> <span class="pull-right">Rp. <?=number_format($data->iuran_pensiun)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Iuran JHT</strong> <span class="pull-right">Rp. <?=number_format($data->iuran_jht)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Astek</strong> <span class="pull-right">Rp. <?=number_format($data->astek)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan PLO</strong> <span class="pull-right">Rp. <?=number_format($data->pot_plo)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan KMG</strong> <span class="pull-right">Rp. <?=number_format($data->pot_kmg)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan IW</strong> <span class="pull-right">Rp. <?=number_format($data->pot_iw)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Arisan</strong> <span class="pull-right">Rp. <?=number_format($data->pot_arisan)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Uang Sosial</strong> <span class="pull-right">Rp. <?=number_format($data->pot_uangsosial)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Iuran Sekar</strong> <span class="pull-right">Rp. <?=number_format($data->pot_iuransekar)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Iuran Kematian</strong> <span class="pull-right">Rp. <?=number_format($data->pot_iurankematian)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Tabungan Yakekar</strong> <span class="pull-right">Rp. <?=number_format($data->pot_tabyakekar)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Kredit Yakekar</strong> <span class="pull-right">Rp. <?=number_format($data->pot_kredityakekar)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Kredit Kartini</strong> <span class="pull-right">Rp. <?=number_format($data->pot_kreditkartini)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Bidang Yakekar</strong> <span class="pull-right">Rp. <?=number_format($data->pot_bidyakekar)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan KPR</strong> <span class="pull-right">Rp. <?=number_format($data->pot_kprbtn)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Zakat</strong> <span class="pull-right">Rp. <?=number_format($data->pot_zakat)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Denda Absen</strong> <span class="pull-right">Rp. <?=number_format($data->pot_dendaabsen)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan BPJS Kesehatan</strong> <span class="pull-right">Rp. <?=number_format($data->pot_bpjstk)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan BPJS Ketenagakerjaan</strong> <span class="pull-right">Rp. <?=number_format($data->pot_bpjs)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Pajak</strong> <span class="pull-right">Rp. <?=number_format($data->pot_pajak)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Potongan Lain</strong> <span class="pull-right">Rp. <?=number_format($data->pot_lain)?>,-</span></td>
+        </tr>
+        <tr>
+          <td><strong>Jumlah Potongan</strong> <span class="pull-right"><strong>Rp. <?=number_format($data->reduction)?>,-</strong></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

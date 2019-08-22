@@ -1,0 +1,103 @@
+<template>
+<div class="page no-swipeback" data-name="agenda">
+	<div class="navbar bay">
+		<div class="navbar-inner">
+			<div class="left">
+				<!-- <a href="#" style="color:#000;" class="link back">
+					<i class="fa fa-angle-left"></i> <span class="ios-only">Back</span>
+				</a> -->
+			</div>
+			<div style="color:#000;" class="title">Agenda</div>
+			<div class="right">
+				<a href="/add-client/" style="color:#000;" class="link icon-only">
+					<!-- <i class="f7-icons">add</i> -->
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-content">
+		<div class="block">
+      <div style="max-height:90px;" data-pagination='{"el": ".swiper-pagination"}' data-space-between="10" data-slides-per-view="3" class="swiper-container swiper-init demo-swiper">
+        <div class="swiper-wrapper" style="max-height:90px;">
+          <div class="swiper-slide" style="max-height:90px;">
+            <div class="dash-widget-info">
+              <p>Juli</p>
+              <h4>2019</h4>
+            </div>
+          </div>
+          <div class="swiper-slide" style="max-height:90px;">
+            <div class="dash-widget-info">
+              <p>Agustus</p>
+              <h4>2019</h4>
+            </div>
+          </div>
+          <div class="swiper-slide" style="max-height:90px;">
+            <div class="dash-widget-info">
+              <p>September</p>
+              <h4>2019</h4>
+            </div>
+          </div>
+          <div class="swiper-slide" style="max-height:90px;">
+            <div class="dash-widget-info">
+              <p>Oktober</p>
+              <h4>2019</h4>
+            </div>
+          </div>
+          <div class="swiper-slide" style="max-height:90px;">
+            <div class="dash-widget-info">
+              <p>November</p>
+              <h4>2019</h4>
+            </div>
+          </div>
+          <div class="swiper-slide" style="max-height:90px;">
+            <div class="dash-widget-info">
+              <p>Desember</p>
+              <h4>2019</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="style14">
+      <!-- ISI TODAY -->
+      <div class="row">
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding" style="padding:6px;">
+              This is a simple card with plain text,
+            </div>
+          </div>
+        </div>
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding" style="padding:6px;">
+              This is a simple card with plain text,
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+		</div>
+	</div>
+</div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+        $("#agenda").addClass('tab-link-active');
+        $("#home").removeClass('tab-link-active');
+        $("#profile").removeClass('tab-link-active');
+        $("#bantuan").removeClass('tab-link-active');
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

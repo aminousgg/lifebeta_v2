@@ -137,7 +137,7 @@ input[disabled], input[readonly] {background-color: #eee;}
 .m-t-0 {margin-top:0 !important;}
 .m-t-5 {margin-top:5px !important;}
 .m-t-10 {margin-top:10px !important;}
-.ios .list input[type="date"], .ios .list input[type="datetime-local"], .ios .list input[type="email"], .ios .list input[type="number"], .ios .list input[type="password"], .ios .list input[type="search"], .ios .list input[type="tel"], .ios .list input[type="text"], .ios .list input[type="time"], .ios .list input[type="url"], .ios .list select {color: #333;font-size: 14px;height: 40px;}
+.ios .list input[type="date"], .ios .list input[type="datetime-local"], .ios .list input[type="email"], .ios .list input[type="number"], .ios .list input[type="password"], .ios .list input[type="search"], .ios .list input[type="tel"], .ios .list input[type="text"], .ios .list input[type="time"], .ios .list input[type="url"], .ios .list select {color: #333;font-size: 14px;height: 40px; border-radius:6px;}
 .ios .list input[type="file"] {box-sizing: border-box;padding: 10px;width: 100%;}
 .ios .list ul::before {background-color: #e7e7e7;}
 .ios .list ul::after {background-color: #e7e7e7;}
@@ -162,9 +162,13 @@ input[disabled], input[readonly] {background-color: #eee;}
 .demo-card-header-pic .card-content-padding .date{
   color: #8e8e93;
 }
-
+.doclist{
+	text-align:center; font-weight:bold; font-size:16px;
+	/* padding-top: 10px; padding-bottom: 10px; */
+}
 .demo-swiper .swiper-slide {
-  font-size: 25px;
+	text-align: center;
+  /* font-size: 25px; */
   font-weight: 300;
   display: flex;
   justify-content: center;
@@ -243,8 +247,8 @@ input[disabled], input[readonly] {background-color: #eee;}
 	5. Header
 -----------------------*/
 /* -------- */
-.bay { box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
-.bay-top { box-shadow: 0 -5px 7px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
+/* .bay { box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); } */
+/* .bay-top { box-shadow: 0 -5px 7px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); } */
 /* -------- */
 .navbar::after {opacity:0;}
 /* .navbar-inner {background: #3a57c4;} */
@@ -264,7 +268,7 @@ input[disabled], input[readonly] {background-color: #eee;}
 .ios .popover .list:last-child li:last-child, .ios .popover .list:last-child li:last-child a, .ios .popover .list:last-child li:last-child > label {border-radius: 0 0 4px 4px;}
 .popover .list .list-button::after {background-color: #ededed;}
 .popover .list .list-button {color: #333;font-size: 14px;line-height: 40px;}
-.ios .navbar ~ .page-content, .ios .navbar ~ *:not(.no-navbar) .page-content {padding-top: 60px;}
+.ios .navbar ~ .page-content, .ios .navbar ~ *:not(.no-navbar) .page-content {padding-top: 50px;}
 .ios .navbar .title {color:#fff;}
 
 /*-----------------
@@ -351,7 +355,7 @@ hr.style14 {
 
 .ios .list {font-size: 16px;}
 .ios .list.custom-form {margin: 15px 0;}
-.ios .page-content > .list {margin: 15px 0;}
+.ios .page-content > .list {margin: 0px 0;}
 .ios .list .item-subtitle.leave-type {font-size: 13px;margin-top: 5px;}
 .ios .list .item-text.leave-days {font-size:12px;}
 .ios .leave-list .badge {border-radius: 4px;font-size: 11px;height: 18px;line-height: 18px;min-width: 76px;padding: 0 10px;}

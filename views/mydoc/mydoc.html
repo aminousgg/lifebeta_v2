@@ -1,0 +1,108 @@
+<template>
+<div class="page no-swipeback" data-name="agenda">
+	<div class="navbar bay">
+		<div class="navbar-inner">
+			<div class="left">
+				<a href="#" style="color:#000;" class="link back">
+					<i class="fa fa-angle-left"></i> <span class="ios-only">Back</span>
+				</a>
+			</div>
+			<div style="color:#000;" class="title">MY DOC</div>
+			<div class="right">
+				<a href="/add-client/" style="color:#000;" class="link icon-only">
+					<!-- <i class="f7-icons">add</i> -->
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-content">
+		<div class="block">
+      <!--  -->
+      <div class="row">
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding doclist">
+              <h4>
+                KTP
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding doclist">
+              <h4>
+                Ijazah
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+			<div class="row">
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding doclist">
+              <h4>
+                NPWP
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding doclist">
+              <h4>
+                BPJS
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+			<!--  -->
+			<div class="row">
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding doclist">
+              <h4>
+                Sertifikasi
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-50">
+          <div class="card">
+            <div class="card-content card-content-padding doclist">
+              <h4>
+                Kartukeluarga
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+			<!--  -->
+		</div>
+	</div>
+</div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+        $("#agenda").addClass('tab-link-active');
+        $("#home").removeClass('tab-link-active');
+        $("#profile").removeClass('tab-link-active');
+        $("#bantuan").removeClass('tab-link-active');
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

@@ -1,0 +1,201 @@
+<template>
+  <div class="page" data-name="salary-view">
+  	<div class="navbar">
+  		<div class="navbar-inner">
+        <div class="left">
+  				<a href="/" class="link back">
+  					<i class="fa fa-angle-left" style="color: #000;"></i>
+  				</a>
+  			</div>
+        <div class="title" style="color:#000;">Payslip <span id="slip-payroll"></span></div>
+        <div class="right">
+        </div>
+  		</div>
+  	</div>
+  	<div class="page-content">
+  		<div class="block block-strong inv-section">
+        <div class="slip-image padding-bottom">
+
+        </div>
+  			<div class="row">
+  				<div class="col-70">
+  					<h5 id="slip-nama"></h5>
+  					<ul class="inv-receiver">
+  						<li id="slip-jabatan"></li>
+  						<li>NIP : <span id="slip-nip"></span></li>
+  						<li id="slip-unitkerja"></li>
+  					</ul>
+  				</div>
+  			</div>
+  			<div class="earning-box">
+  				<h4 class="m-b-10">Pendapatan</h4>
+  				<table class="table-bordered">
+  					<tbody>
+              <tr>
+                <td><strong>Gaji Pokok</strong> <span class="pull-right" id="slip-gajipokok"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Tunjangan Fungsional</strong> <span class="pull-right" id="slip-tjfungsional"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Tunjangan Jabatan</strong> <span class="pull-right" id="slip-tjjabatan"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Tunjangan Khusus</strong> <span class="pull-right" id="slip-tjkhusus"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Tunjangan Kinerja</strong> <span class="pull-right" id="slip-tjkinerja"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Tunjangan Pajak</strong> <span class="pull-right" id="slip-tjpajak"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Total Pendapatan</strong> <span class="pull-right" id="slip-income"><strong></strong></span></td>
+              </tr>
+  					</tbody>
+  				</table>
+  			</div>
+  			<div class="deduction-box">
+  				<h4 class="m-b-10">Potongan</h4>
+  				<table class="table-bordered">
+  					<tbody>
+              <tr>
+                <td><strong>Iuran Pensiun</strong> <span class="pull-right" id="slip-iuranpensiun"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Iuran JHT</strong> <span class="pull-right" id="slip-iuranjht"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Astek</strong> <span class="pull-right" id="slip-astek"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan PLO</strong> <span class="pull-right" id="slip-plo"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan KMG</strong> <span class="pull-right" id="slip-kmg"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan IW</strong> <span class="pull-right" id="slip-iw"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Arisan</strong> <span class="pull-right" id="slip-arisan"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Uang Sosial</strong> <span class="pull-right" id="slip-uangsosial"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Iuran Sekar</strong> <span class="pull-right" id="slip-iuransekar"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Iuran Kematian</strong> <span class="pull-right" id="slip-iurankematian"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Tabungan Yakekar</strong> <span class="pull-right" id="slip-tabyakekar"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Kredit Yakekar</strong> <span class="pull-right" id="slip-kredityakekar"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Kredit Kartini</strong> <span class="pull-right" id="slip-kreditkartini"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Bidang Yakekar</strong> <span class="pull-right" id="slip-bidyakekar"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan KPR</strong> <span class="pull-right" id="slip-kpr"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Zakat</strong> <span class="pull-right" id="slip-zakat">/span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Denda Absen</strong> <span class="pull-right" id="slip-dendaabsen"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan BPJS Kesehatan</strong> <span class="pull-right" id="slip-bpjs"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan BPJS Ketenagakerjaan</strong> <span class="pull-right" id="slip-bpjstk"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Pajak</strong> <span class="pull-right" id="slip-pajak"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Potongan Lain</strong> <span class="pull-right" id="slip-lain"></span></td>
+              </tr>
+              <tr>
+                <td><strong>Jumlah Potongan</strong> <span class="pull-right" id="slip-reduction"><strong></strong></span></td>
+              </tr>
+  					</tbody>
+  				</table>
+  			</div>
+  			<p class="salary-amount m-t-0"><strong>Take Home Pay: <span id="slip-netsalary"></span></strong></p>
+        <p>#<span id="slip-convert"></span></p>
+  		</div>
+  	</div>
+  </div>
+</template>
+<script>
+	return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+				app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+        get_biodata(page.app, function(data){
+            $("#slip-nama").html(data.nama);
+            $("#slip-jabatan").html(data.jabatan);
+            $("#slip-nip").html(data.nip);
+        });
+        get_karir(page.app, function(data){
+            $("#slip-unitkerja").html(data.response[0].unit_kerja);
+        });
+        get_payrollslip(page.app, page.route.params.no_slip, function(data){
+            $("#slip-payroll").html("#"+data.response.latest.no_slip);
+            // PENDAPATAN
+            $("#slip-gajipokok").html(rupiah(data.response.latest.gaji));
+            $("#slip-tjfungsional").html(rupiah(data.response.latest.tj_fungsional));
+            $("#slip-tjjabatan").html(rupiah(data.response.latest.tj_jabatan));
+            $("#slip-tjkhusus").html(rupiah(data.response.latest.tj_khusus));
+            $("#slip-tjkinerja").html(rupiah(data.response.latest.tj_kinerja));
+            $("#slip-tjpajak").html(rupiah(data.response.latest.tj_pajak));
+            $("#slip-income").html(rupiah(data.response.latest.income));
+            // POTONGAN
+            $("#slip-iuranpensiun").html(rupiah(data.response.latest.iuran_pensiun));
+            $("#slip-iuranjht").html(rupiah(data.response.latest.iuran_jht));
+            $("#slip-astek").html(rupiah(data.response.latest.astek));
+            $("#slip-plo").html(rupiah(data.response.latest.pot_plo));
+            $("#slip-kmg").html(rupiah(data.response.latest.pot_kmg));
+            $("#slip-iw").html(rupiah(data.response.latest.pot_iw));
+            $("#slip-arisan").html(rupiah(data.response.latest.pot_arisan));
+            $("#slip-uangsosial").html(rupiah(data.response.latest.pot_uangsosial));
+            $("#slip-iuransekar").html(rupiah(data.response.latest.pot_iuransekar));
+            $("#slip-iurankematian").html(rupiah(data.response.latest.pot_iurankematian));
+            $("#slip-tabyakekar").html(rupiah(data.response.latest.pot_tabyakekar));
+            $("#slip-krediyakekar").html(rupiah(data.response.latest.pot_kredityakekar));
+            $("#slip-kreditkartini").html(rupiah(data.response.latest.pot_kreditkartini));
+            $("#slip-bidyakekar").html(rupiah(data.response.latest.pot_bidyakekar));
+            $("#slip-kpr").html(rupiah(data.response.latest.pot_kprbtn));
+            $("#slip-zakat").html(rupiah(data.response.latest.pot_zakat));
+            $("#slip-dendaabsen").html(rupiah(data.response.latest.pot_dendaabsen));
+            $("#slip-bpjs").html(rupiah(data.response.latest.pot_bpjs));
+            $("#slip-bpjstk").html(rupiah(data.response.latest.pot_bpjstk));
+            $("#slip-pajak").html(rupiah(data.response.latest.pot_pajak));
+            $("#slip-lain").html(rupiah(data.response.latest.pot_lain));
+            $("#slip-reduction").html(rupiah(data.response.latest.reduction));
+            // NET SALARY
+            $("#slip-netsalary").html(rupiah(data.response.latest.net_salary));
+            $("#slip-convert").html(toWords(data.response.latest.net_salary));
+        });
+
+        get_foto2(page.app, function(data){
+            $(".slip-image").html('<img class="circle-img pos-center" src="'+data+'" alt="" style="width: 30%;">');
+        });
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>

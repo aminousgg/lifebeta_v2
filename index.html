@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-
-<!-- Mirrored from dreamguys.co.in/dhr/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Aug 2018 01:13:12 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
@@ -11,7 +8,18 @@
     <title>Lifeatbankjateng</title>
     <link rel="stylesheet" href="assets/css/framework7.ios.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
+    <link type="text/css" href="assets/css/jquery.signature.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      .kbw-signature{
+        width: 100%;
+      }
+      .kbw-signature canvas{
+        width: 100%;
+        height: 100%;
+      }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -19,7 +27,7 @@
 
         <div class="panel panel-left panel-reveal">
             <div class="block">
-                <div class="block-title">
+                <div class="block-title" id="foto_profile">
                   <img class="circle-img pos-center" src="user-logo.jpg" alt="">
                 </div>
                 <div class="block text-align-center">
@@ -34,7 +42,7 @@
         							</a>
                     </li>
                     <li>
-                      <a class="panel-close text-align-left" href="/user-guide/">
+                      <a class="panel-close text-align-left" onclick="logout()">
                         <b><i class="fa fa-lock" aria-hidden="true"></i> Logout</b>
         							</a>
                     </li>
@@ -54,7 +62,7 @@
                               <!-- <img style="" src="assets/img/life.png" alt=""> -->
                             </a>
                         </div>
-                        <div class="right" style="margin-right: 7px;">
+                        <div class="right">
                           <a href="/notifications/" style="color:#000;" class="link icon-only isi-notif"><i class="icon material-icons notif">notifications</i></a>
                           <!-- <a href="#" style="color:#000;" data-popover=".main-menu" class="link icon-only popover-open"><i class="material-icons">more_vert</i></a> -->
                         </div>
@@ -89,32 +97,14 @@
                               <div class="swiper-container swiper-init demo-swiper">
                                 <div class="swiper-wrapper">
                                   <div class="swiper-slide"> <img style="height:100%; width:100%;" src="assets/img/banner.png" alt=""> </div>
-                                  <!-- <div class="swiper-slide">Slide 2</div>
-                                  <div class="swiper-slide">Slide 3</div>
-                                  <div class="swiper-slide">Slide 4</div>
-                                  <div class="swiper-slide">Slide 5</div>
-                                  <div class="swiper-slide">Slide 6</div>
-                                  <div class="swiper-slide">Slide 7</div>
-                                  <div class="swiper-slide">Slide 8</div>
-                                  <div class="swiper-slide">Slide 9</div>
-                                  <div class="swiper-slide">Slide 10</div> -->
                                 </div>
                               </div>
                             </div>
                           </div>
                           <!--/ slide -->
+
                           <!-- icon BARIS -->
                           <div class="row">
-                            <div class="col-25 tablet-25">
-                                <a href="/sales/">
-                                  <div class="item-widget">
-                                    <div class="item-widget-icon"><img src="assets/img/sales.png" alt=""></div>
-                                    <div class="item-widget-info">
-                                      <p>SALES</p>
-                                    </div>
-                                  </div>
-                                </a>
-                            </div>
                             <div class="col-25 tablet-25">
                                 <a href="/eoffice/">
                                   <div class="item-widget">
@@ -145,10 +135,30 @@
                                   </div>
                                 </a>
                             </div>
+                            <div class="col-25 tablet-25">
+                                <a href="/cuti/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/cuti.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>CUTI</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
                           </div>
                           <!-- icon -->
                           <!-- icon BARIS 2 -->
                           <div class="row margin-top">
+                            <div class="col-25 tablet-25">
+                                <a href="/ijin/">
+                                  <div class="item-widget">
+                                    <div class="item-widget-icon"><img src="assets/img/absen2.png" alt=""></div>
+                                    <div class="item-widget-info">
+                                      <p>IZIN</p>
+                                    </div>
+                                  </div>
+                                </a>
+                            </div>
                             <div class="col-25 tablet-25">
                                 <a href="/koperasi/">
                                   <div class="item-widget">
@@ -160,21 +170,11 @@
                                 </a>
                             </div>
                             <div class="col-25 tablet-25">
-                                <a href="/cuti/">
+                                <a href="/sales/">
                                   <div class="item-widget">
-                                    <div class="item-widget-icon"><img src="assets/img/cuti.png" alt=""></div>
+                                    <div class="item-widget-icon"><img src="assets/img/sales.png" alt=""></div>
                                     <div class="item-widget-info">
-                                      <p>CUTI</p>
-                                    </div>
-                                  </div>
-                                </a>
-                            </div>
-                            <div class="col-25 tablet-25">
-                                <a href="/ijin/">
-                                  <div class="item-widget">
-                                    <div class="item-widget-icon"><img src="assets/img/absen2.png" alt=""></div>
-                                    <div class="item-widget-info">
-                                      <p>IJIN ABSEN</p>
+                                      <p>SALES</p>
                                     </div>
                                   </div>
                                 </a>
@@ -271,7 +271,7 @@
                         </a>
                     </div>
                     <div class="col-25 tablet-25">
-                      <a href="/kinerja/">
+                      <a href="/gaji/" class="sheet-close">
                         <div class="item-widget">
                           <div class="item-widget-icon"><img src="assets/img/gaji.png" alt=""></div>
                           <div class="item-widget-info">
@@ -291,7 +291,7 @@
                       </a>
                     </div>
                     <div class="col-25 tablet-25">
-                      <a href="/kinerja/">
+                      <a href="/mydoc/" class="sheet-close">
                         <div class="item-widget">
                           <div class="item-widget-icon"><img src="assets/img/mydoc.png" alt=""></div>
                           <div class="item-widget-info">
@@ -315,7 +315,7 @@
                         <div class="item-widget">
                           <div class="item-widget-icon"><img src="assets/img/presensi.png" alt=""></div>
                           <div class="item-widget-info">
-                            <p>KEHADIRAN</p>
+                            <p>PRESENSI</p>
                           </div>
                         </div>
                       </a>
@@ -327,19 +327,19 @@
             <!--  -->
             <div class="toolbar tabbar tabbar-labels toolbar-bottom bay-top">
               <div class="toolbar-inner">
-                <a href="/" id="home" class="tab-link tab-link-active">
+                <a href="/" id="home" class="tab-link">
                   <!-- Different icons for iOS and MD themes -->
                   <i class="icon f7-icons if-not-md">home_fill</i>
                   <i class="icon material-icons md-only">home</i>
                   <!-- Label text -->
                   <span class="tabbar-label">Home</span>
                 </a>
-                <a href="#tab-2" class="tab-link">
+                <a href="/agenda/" id="agenda" class="tab-link">
                   <i class="icon f7-icons if-not-md">today_fill</i>
                   <i class="icon material-icons md-only">today</i>
                   <span class="tabbar-label">Agenda</span>
                 </a>
-                <a href="#tab-2" class="tab-link">
+                <a href="/bantuan/" id="bantuan" class="tab-link">
                   <i class="icon f7-icons if-not-md">help_fill</i>
                   <i class="icon material-icons md-only">help</i>
                   <span class="tabbar-label">Bantuan</span>
@@ -359,6 +359,9 @@
         </div>
     </div>
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.ui.touch-punch.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.signature.js"></script>
     <script type="text/javascript" src="assets/js/framework7.min.js"></script>
     <script type="text/javascript" src="assets/js/Chart.bundle.js"></script>
     <script type="text/javascript" src="assets/js/routes.js"></script>

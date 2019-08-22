@@ -1,0 +1,199 @@
+<template>
+  <div class="page" data-name="add-employee">
+      <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" style="color:#000;" class="link back">
+                <i class="fa fa-angle-left"></i>
+              </a>
+            </div>
+            <div style="color:#000;" class="title">Pengajuan Cuti Tahunan</div>
+            <div class="right">
+              <a href="/add-client/" style="color:#000;" class="link icon-only">
+              </a>
+            </div>
+          </div>
+      </div>
+      <div class="page-content">
+    		<div class="list no-hairlines custom-form">
+          <ul>
+            <!-- TANGGAL CUTI -->
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="row">
+                  <div class="col-25">
+                    <div class="profile-img">
+                      <img src="assets/icon/cuti/calendar.png">
+                    </div>
+                  </div>
+                  <div class="col-75">
+                      <div class="item-title item-label">Tanggal Cuti</div>
+                      <div class="item-input-wrap">
+                        <input type="text" placeholder="Pilih Tanggal Cuti" readonly="readonly" id="demo-calendar-multiple"/>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- TANGGAL CUTI -->
+
+            <!-- ALASAN CUTI -->
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="row">
+                  <div class="col-25">
+                    <div class="profile-img">
+                      <img src="assets/icon/cuti/alasan.png">
+                    </div>
+                  </div>
+                  <div class="col-75">
+                      <div class="item-title item-label">Alasan Cuti</div>
+                      <div class="item-input-wrap">
+                        <textarea style="height:75px;"></textarea>
+          							<span class="input-clear-button"></span>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- ALASAN CUTI -->
+            <!-- LIST PILIH ALASAN -->
+            <li class="item-content" style="margin-top:10px;">
+              <div class="item-inner">
+                <a class="item-link item-content autocomplete-standalone-popup" href="#" id="autocomplete-standalone-popup" style="background-color:#e7e7e7; border-radius:6px; width:100%;">
+                  <input type="hidden">
+                  <div class="item-inner" style="padding 0;">
+                    <div class="item-title" style="margin: 0 auto; font-weight: 400;">Pilih Alasan Anda</div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <!-- LIST PILIH ALASAN -->
+            <!-- LIST PEMIMPIN UNITKERJA -->
+            <li class="item-content" style="max-height:32px;">
+              <div class="item-inner">
+                <a class="item-link item-content autocomplete-standalone-popup" href="#" id="autocomplete-standalone-popup" style="background-color:#e7e7e7; border-radius:6px; width:100%; max-height:20px;">
+                  <input type="hidden">
+                  <div class="item-inner" style="padding 0;">
+                    <div class="item-title" style="margin: 0 auto; font-weight: 400;">Pilih Pemimpin Unitkerja</div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <!-- LIST PEMIMPIN UNITKERJA -->
+            <!-- LIST PEJABAT BERWENANG -->
+            <li class="item-content">
+              <div class="item-inner">
+                <a class="item-link item-content autocomplete-standalone-popup" href="#" id="autocomplete-standalone-popup" style="background-color:#e7e7e7; border-radius:6px; width:100%;">
+                  <input type="hidden">
+                  <div class="item-inner" style="padding 0;">
+                    <div class="item-title" style="margin: 0 auto; font-weight: 400;">Pilih Pejabat Berwenang</div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <!-- LIST PEJABAT BERWENANG -->
+            <!-- ALASAN CUTI -->
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="row" style="width:100%;">
+                  <div class="col-100">
+                      <div class="item-title item-label" style="text-align:center">Tanda Tangan</div>
+                      <div class="item-input-wrap" style="text-align: center;">
+                        <div class="coba" id="coba" style="height: 130px;">
+                        </div>
+                      </div>
+                  </div>
+                  <button type="submit" class="button button-fill margin-top">Submit</button>
+                  <button type="button" class="button button fill margin-top" id="tahunan-reset" name="button">Try Again Signature</button>
+                </div>
+              </div>
+            </li>
+            <!-- ALASAN CUTI -->
+          </ul>
+
+    		</div>
+    	</div>
+  </div>
+</template>
+<script>
+  return {
+		on :{
+			pageBeforeIn: function(event, page) {
+				app.preloader.show();
+			},
+			pageAfterIn: function(event, page) {
+        app.preloader.hide();
+			},
+			pageInit: function(event, page) {
+        $("#coba").signature({
+          color       : "#000",
+          guideline   : true,
+        });
+        $("#tahunan-reset").click(function(){
+          $("#coba").signature("clear");
+        });
+        // console.log([0,6].indexOf(date.getDay()));
+        disable_event(page.app, function(data){
+          var today = new Date();
+          var weekLater = new Date().setDate(today.getDate() + 7);
+          var hai = [];
+          var tahun;
+          var bulan;
+          var hari;
+          var a;
+          $.each(data, function(i, item){
+            tahun = data[i].tanggal.substr(0,4);
+            bulan = data[i].tanggal.substr(5,2);
+            hari  = data[i].tanggal.substr(8,2);
+            hai.push(new Date(tahun+","+bulan+","+hari));
+          });
+          var calendarMultiple = app.calendar.create({
+            inputEl: '#demo-calendar-multiple',
+            minDate: today,
+            dateFormat: 'yyyy M dd',
+            animate: true,
+            multiple: true,
+            events : hai,
+            // disabled: [new Date(2019, 09, 05), new Date(2019, 09, 10)],
+            disabled: hai,
+            // return [0,6].indexOf(date.getDay()) >= 0;
+
+          });
+        });
+        // AUTOCOMPLETE
+          var autocompleteStandalonePopup = app.autocomplete.create({
+            openIn: 'popup', //open in page
+            openerEl: '.autocomplete-standalone-popup', //link that opens autocomplete
+            closeOnSelect: true, //go back after we select something
+            source: function (query, render) {
+              var results = [];
+              if (query.length === 0) {
+                render(results);
+                return;
+              }
+              // Find matched items
+              for (var i = 0; i < fruits.length; i++) {
+                if (fruits[i].toLowerCase().indexOf(query.toLowerCase()) >= 0) results.push(fruits[i]);
+              }
+              // Render items by passing array with result items
+              render(results);
+            },
+            on: {
+                change: function (value) {
+                  // Add item text value to item-after
+                  $$('#autocomplete-standalone-popup').find('.item-after').text(value[0]);
+                  // Add item value to input value
+                  $$('#autocomplete-standalone-popup').find('input').val(value[0]);
+                },
+            },
+          });
+			},
+			pageBeforeRemove: function(event, page) {
+			},
+		}
+	}
+</script>
